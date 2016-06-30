@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Личный сайт Бро Вонни</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript">
+	
+	function Play(){	
+	var min=1;
+	var max=100;
+	var guessNumber=Math.floor(Math.random()*(max-min+1))+min;
+	alert("Компьютер загадал число от "+min+" до "+max+". Угадайте его за 7 попыток<br>");
+	var tryCount=0;
+	var userAnswer;
+	do
+	{
+		tryCount=tryCount+1;
+		userAnswer1=+prompt(tryCount + " попытка игрок 1. Ваш вариант:");
+		userAnswer2=+prompt(tryCount + " попытка игрок 2. Ваш вариант:");
+		if(userAnswer1>guessNumber)		
+			alert("Перелет игрок 1");
+		if(userAnswer1<guessNumber)
+			alert("Недолет игрок 1");
+		if(userAnswer2>guessNumber)		
+			alert("Перелет игрок 2");
+		if(userAnswer2<guessNumber)
+			alert("Недолет игрок 2");
+	}
+	
+
+	while(userAnswer1!=guessNumber && tryCount<7);
+	if(userAnswer1==guessNumber) alert("Поздравляем игрок 1! Вы угадали!");
+		
+	while(userAnswer2!=guessNumber && tryCount<7);
+	if(userAnswer2==guessNumber) alert("Поздравляем игрок 2! Вы угадали!");
+		else alert("Вы оба проиграли! Попробуйте еще раз");
+	}
+	</script>
+</head>
+<body>
+	<div id="header">
+		<a href="index.html">Главная</a><span>/</span>
+		<a href="puzzle.html">Загадки</a><span>/</span>
+		<a href="guess.html">Угадайка</a><span>/</span>
+		<a href="guess-2.html">Угадайка мультиплеер</a><span>/</span>
+	</div>
+<div id="content">
+	<h1>Личный сайт Бро Вонни</h1>
+    <div id="center">	
+		<h3>Угадайка</h3>			
+	    <div id="box">
+	    	<p>Начните игру. У вас будет 7 попыток, чтобы угадать загадку.</p>
+            <br><br/>
+            <a href="#" onclick="Play();">Начать игру</a>
+	    </div>
+</div>
+
+<div id="footer">
+	Copyright © 2016 <a href="https://geekbrains.ru/"> GeekBrains </a>
+</div>
+
+</body>
+</html>
